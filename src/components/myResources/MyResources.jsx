@@ -40,12 +40,14 @@ export function MyResources({ isLoggedIn }) {
             </h3>
           )}
           {resources.length > 0 && (
-            <div>
+            <>
               <h2>My resources</h2>
-              {resources.map((resource) => {
-                return <Card resource={resource} key={Math.random()} />;
-              })}
-            </div>
+              <div className="flex flex-row flex-wrap">
+                {resources.map((resource) => {
+                  return <Card resource={resource} key={Math.random()} />;
+                })}
+              </div>
+            </>
           )}
         </div>
       )}
