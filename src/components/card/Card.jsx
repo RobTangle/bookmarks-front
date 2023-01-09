@@ -1,16 +1,16 @@
 export function Card({ resource }) {
   return (
     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-1 ">
-      <div class="flex justify-end px-4 pt-4">
+      <div className="flex justify-end px-4 pt-4">
         <button
           id="dropdownButton"
-          data-dropdown-toggle="dropdown"
-          class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+          data-dropdown-toggle="dropdown1"
+          className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
           type="button"
         >
-          <span class="sr-only">Open dropdown</span>
+          <span className="sr-only">Open dropdown</span>
           <svg
-            class="w-6 h-6"
+            className="w-6 h-6"
             aria-hidden="true"
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -21,14 +21,14 @@ export function Card({ resource }) {
         </button>
         {/* <!-- Dropdown menu --> */}
         <div
-          id="dropdown"
-          class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
+          id="dropdown1"
+          className="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
         >
-          <ul class="py-1" aria-labelledby="dropdownButton">
+          <ul className="py-1" aria-labelledby="dropdownButton">
             <li>
               <a
                 href="#"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
               >
                 Edit
               </a>
@@ -36,7 +36,7 @@ export function Card({ resource }) {
             <li>
               <a
                 href="#"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
               >
                 Export Data
               </a>
@@ -44,7 +44,7 @@ export function Card({ resource }) {
             <li>
               <a
                 href="#"
-                class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
               >
                 Delete
               </a>
@@ -52,7 +52,7 @@ export function Card({ resource }) {
           </ul>
         </div>
       </div>
-      {/* <svg
+      <svg
         className="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400"
         aria-hidden="true"
         fill="currentColor"
@@ -65,7 +65,7 @@ export function Card({ resource }) {
           clipRule="evenodd"
         ></path>
         <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path>
-      </svg> */}
+      </svg>
       <a href="#">
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {resource.title}
