@@ -21,7 +21,7 @@ export function fetchAllResources() {
     } catch (error) {
       Swal.fire({
         title: "Oops! Something went wrong",
-        text: error.message,
+        text: error?.response?.data?.message?.[0] || error.message,
         icon: "error",
         showConfirmButton: true,
         showCloseButton: true,
@@ -65,7 +65,7 @@ export function createResource(form, setForm) {
         position: "center",
         icon: "error",
         title: "Oops! Something went wrong!",
-        text: error.message,
+        text: error?.response?.data?.message?.[0] || error.message,
         showConfirmButton: true,
       });
     }
