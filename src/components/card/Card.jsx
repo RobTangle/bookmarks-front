@@ -2,7 +2,7 @@ export function Card({ resource }) {
   return (
     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-1 ">
       <div className="flex justify-end px-4 pt-4">
-        <span class="inline-flex divide-x overflow-hidden rounded-md border bg-white shadow-sm dark:divide-red-900 dark:border-gray-800 dark:bg-gray-800">
+        <span class="inline-flex divide-x overflow-hidden rounded-md border bg-white shadow-sm dark:divide-grey-900 dark:border-gray-800 dark:bg-gray-800">
           <button
             class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800"
             title="Edit Product"
@@ -24,7 +24,7 @@ export function Card({ resource }) {
           </button>
 
           <button
-            class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800"
+            class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800 ml-0.5"
             title="Delete Product"
           >
             <svg
