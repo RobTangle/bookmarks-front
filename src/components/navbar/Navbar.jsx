@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { NAME_ACCESS_TOKEN } from "../../helpers/constants";
 import { signInFormMX, signUpFormMX } from "../../helpers/swals";
+import { SigninModal } from "../signinModal/SigninModal";
 
 export function Navbar({ isLoggedIn, setIsLoggedIn }) {
-  // const accessTokenInLS = localStorage.getItem(NAME_ACCESS_TOKEN);
   const [token, setToken] = useState(false);
 
   React.useEffect(() => {
@@ -47,6 +47,7 @@ export function Navbar({ isLoggedIn, setIsLoggedIn }) {
         </>
       ) : (
         <>
+          <SigninModal />
           <button onClick={handleSignin}>Sign In</button>
           <button onClick={handleSignup}>Sign Up</button>
         </>
