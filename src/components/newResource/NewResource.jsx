@@ -1,8 +1,10 @@
-import axios from "axios";
 import { useState } from "react";
-import { NAME_ACCESS_TOKEN } from "../../helpers/constants";
+import { useDispatch } from "react-redux";
+import { createResource } from "../../redux/features/resource";
 
 export function NewResource({ isLoggedIn }) {
+  const dispatch = useDispatch();
+
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -10,47 +12,14 @@ export function NewResource({ isLoggedIn }) {
     category: "",
     keywords: "", // antes de enviar el post, hacer un split(" ")
   });
-  const URL_SERVER = "http://localhost:3333";
-
-  async function postWithAxios(form) {
-    try {
-      console.log("FORM = ", form);
-      const formDataParsed = {
-        ...form,
-        keywords: form.toLowerCase().split(" "),
-      };
-      console.log("FORM DATA PARSED = ", formDataParsed);
-      const accessToken = localStorage.getItem(NAME_ACCESS_TOKEN);
-      const response = await axios.post(
-        URL_SERVER + "/bookmarks",
-        formDataParsed,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-      if (response.status === 201) {
-        alert("Recurso creado exitosamente.");
-        setForm({
-          title: "",
-          description: "",
-          link: "",
-          category: "",
-          keywords: "",
-        });
-      } else {
-        console.log(response);
-        alert(response.data);
-      }
-    } catch (error) {
-      alert(error.message);
-    }
-  }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await postWithAxios(form);
+    const formParsed = {
+      ...form,
+      keywords: form.keywords.toLowerCase().split(" "),
+    };
+    dispatch(createResource(formParsed, setForm));
   }
 
   function handleOnChange(e) {
