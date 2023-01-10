@@ -8,7 +8,9 @@ export function MyResources({ isLoggedIn }) {
   const resourcesState = useSelector((state) => state.resource.allResources);
 
   React.useEffect(() => {
-    dispatch(fetchAllResources());
+    if (isLoggedIn) {
+      dispatch(fetchAllResources());
+    }
   }, []);
 
   function handleRefresh() {
