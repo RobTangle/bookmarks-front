@@ -50,10 +50,13 @@ export function MyResources({ isLoggedIn }) {
         <div className="my-resources-container">
           <hr />
           {resources?.length === 0 && (
-            <h3>
-              You don't have any resource saved in the data base. What are you
-              waiting for?!
-            </h3>
+            <>
+              <button onClick={handleRefresh}>Refresh</button>
+              <h3>
+                You don't have any resource saved in the data base. What are you
+                waiting for?!
+              </h3>
+            </>
           )}
           {resources.length > 0 && (
             <>
